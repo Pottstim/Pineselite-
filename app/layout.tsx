@@ -19,10 +19,21 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
   },
+  keywords: ["AAU basketball", "Southern Pines NC", "youth basketball", "nonprofit sports", "Moore County basketball", "elite AAU", "basketball training NC"],
+  authors: [{ name: "Pines Athlete" }],
   openGraph: {
     title: "Pines Athlete | AAU Basketball in Southern Pines, NC",
     description: "Developing champions on and off the court. Elite AAU basketball program serving Southern Pines and Moore County youth.",
     images: [{ url: "/og-image.jpg" }],
+    siteName: "Pines Athlete",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Pines Athlete | Elite AAU Basketball | Southern Pines, NC",
+    description: "Premium AAU basketball program with interactive 3D experience. Join or support our nonprofit mission.",
+    images: ["/og-image.jpg"],
   },
 };
 
@@ -31,6 +42,31 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "SportsOrganization",
+    "name": "Pines Athlete",
+    "alternateName": "Pines Athlete AAU Basketball",
+    "description": "501(c)(3) nonprofit elite AAU basketball program developing young athletes in Southern Pines and Moore County, North Carolina.",
+    "url": "https://pinesathlete.org", // Update with real domain when live
+    "logo": "https://pinesathlete.org/logo.png", // Update when you have a logo
+    "sport": "Basketball",
+    "location": {
+      "@type": "Place",
+      "name": "Southern Pines, NC",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Southern Pines",
+        "addressRegion": "NC",
+        "postalCode": "28387",
+        "addressCountry": "US"
+      }
+    },
+    "sameAs": [
+      // Add social links when available
+    ]
+  };
+
   return (
     <html
       lang="en"
@@ -39,6 +75,12 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-[#0a0a0f]">
         {children}
         <Toaster position="top-center" richColors closeButton />
+        
+        {/* SEO Structured Data - JSON-LD for Google */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
       </body>
     </html>
   );

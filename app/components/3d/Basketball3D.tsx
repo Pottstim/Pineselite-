@@ -1,7 +1,7 @@
 'use client';
 
-import React, { Suspense, useRef } from 'react';
-import { Canvas, useFrame, ThreeElements } from '@react-three/fiber';
+import React, { Suspense, useRef, useState } from 'react';
+import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { OrbitControls, Stars } from '@react-three/drei';
 import * as THREE from 'three';
 
@@ -13,24 +13,48 @@ interface BasketballProps {
 function Basketball({ position = [0, 0, 0], scale = 1 }: BasketballProps) {
   const groupRef = useRef<THREE.Group>(null!);
   const ballRef = useRef<THREE.Mesh>(null!);
+  const [isClicked, setIsClicked] = useState(false);
+  const clickTimeRef = useRef(0);
 
-  // Gentle auto-rotation + breathing
+  // Gentle auto-rotation + breathing + click interaction
   useFrame((state) => {
     if (groupRef.current) {
       groupRef.current.rotation.y = state.clock.elapsedTime * 0.08;
     }
     if (ballRef.current) {
       const breathe = 1 + Math.sin(state.clock.elapsedTime * 1.2) * 0.008;
-      ballRef.current.scale.setScalar(breathe);
+      let targetScale = breathe;
+
+      if (isClicked) {
+        const elapsed = state.clock.elapsedTime - clickTimeRef.current;
+        if (elapsed < 0.6) {
+          // Pulse effect on click
+          targetScale = breathe + Math.sin(elapsed * 12) * 0.15;
+          ballRef.current.material.emissive = new THREE.Color('#ffaaaa');
+          ballRef.current.material.emissiveIntensity = 0.6;
+        } else {
+          setIsClicked(false);
+          ballRef.current.material.emissive = new THREE.Color('#3a1a00');
+          ballRef.current.material.emissiveIntensity = 0.08;
+        }
+      }
+
+      ballRef.current.scale.setScalar(targetScale);
     }
   });
+
+  const handleClick = () => {
+    setIsClicked(true);
+    clickTimeRef.current = performance.now() / 1000; // Use performance for timing
+    // Optional: trigger a small "dribble" visual boost
+  };
 
   const ballRadius = 2.2;
 
   return (
     <group ref={groupRef} position={position} scale={scale}>
-      {/* Main Basketball Sphere */}
-      <mesh ref={ballRef}>
+      {/* Main Basketball Sphere - Click to "dribble" / interact */}
+      <mesh ref={ballRef} onClick={handleClick} onPointerOver={(e) => { e.object.scale.setScalar(1.05); }} onPointerOut={(e) => { if (!isClicked) e.object.scale.setScalar(1); }}>
         <sphereGeometry args={[ballRadius]} />
         <meshPhongMaterial
           color="#c8102e"
@@ -189,7 +213,7 @@ export default function Basketball3D({ className = "" }: { className?: string })
       
       {/* Subtle interaction hint */}
       <div className="absolute bottom-6 right-6 px-4 py-1.5 rounded-full bg-black/40 backdrop-blur-md border border-white/10 text-xs text-white/60 pointer-events-none">
-        DRAG TO ROTATE • SCROLL TO ZOOM
+        DRAG TO ROTATE • CLICK TO DRIBBLE
       </div>
     </div>
   );

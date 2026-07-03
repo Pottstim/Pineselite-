@@ -1,36 +1,90 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🏀 Pines Athlete
 
-## Getting Started
+**Premium 3D AAU Basketball Website** | Southern Pines, North Carolina
 
-First, run the development server:
+A high-end, interactive nonprofit website for **Pines Athlete** — an elite AAU basketball program developing young athletes with world-class training, character, and college pathways.
+
+**Red & Black** athletic aesthetic with a fully interactive 3D basketball experience powered by Three.js.
+
+## ✨ Highlights
+
+- **Stunning Interactive 3D Hero** — Drag to rotate a premium red basketball with pine accent (Southern Pines branding)
+- **Complete Conversion-Focused Site**
+  - Age-group program pathways (8U–17U)
+  - Athlete testimonials & success stories
+  - Measurable impact stats (200+ athletes, college commitments, etc.)
+  - Fully functional **Donate** form with tiers + monthly option (toasts + tax-deductible messaging)
+  - Tryouts / Interest form
+- **Premium Design System** — Glassmorphism, bold typography, buttery animations, mobile-first
+- Built as a **501(c)(3) nonprofit showcase** to attract players, families, sponsors & donors
+
+## 🚀 Tech Stack
+
+- **Next.js 16** (App Router) + React 19 + TypeScript
+- **Three.js** + React Three Fiber + Drei (interactive 3D basketball)
+- **Tailwind CSS v4** + custom design tokens (Red & Black theme)
+- **Framer Motion** + GSAP for smooth animations
+- **Lucide Icons** + Sonner (beautiful toasts)
+- Fully responsive & accessible
+
+## 👨‍💻 Getting Started
 
 ```bash
+# Clone the repo
+git clone https://github.com/Pottstim/Pineselite-.git
+cd Pineselite-
+
+# Install dependencies
+npm install
+
+# Run the development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) — explore the 3D basketball and donation flow.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🌍 Deployment
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Deploy instantly on **Vercel** (recommended):
 
-## Learn More
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FPottstim%2FPineselite-)
 
-To learn more about Next.js, take a look at the following resources:
+Or build locally:
+```bash
+npm run build
+npm start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🎯 Project Goals
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This site was built to:
+- Attract talented young basketball players & families in Moore County, NC
+- Convert sponsors and donors with clear impact storytelling
+- Showcase the premium, serious nature of the program (red & black = power & professionalism)
 
-## Deploy on Vercel
+## 📝 Customization
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Update real athlete photos, coach bios, and upcoming tryout dates in `app/page.tsx`
+- Connect the donation form to Stripe / Donorbox / your payment processor
+- Replace placeholder SVGs in `public/` with real team imagery
+- Tweak colors or 3D elements in `app/components/3d/Basketball3D.tsx` and `app/globals.css`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 👋 Contributing
+
+Pull requests welcome! Especially for:
+- Real imagery & content
+- Payment integration
+- Additional 3D interactions
+- Accessibility / performance improvements
+
+## 🌐 Links
+
+- **Live Site** (after deploy): Coming soon
+- **GitHub**: https://github.com/Pottstim/Pineselite-
+- **Program**: Pines Athlete — Southern Pines, NC
+
+---
+
+**Built with pride for Southern Pines basketball.**
+
+*This is a 501(c)(3) nonprofit project. Donations via the site are tax-deductible (connect real processor for live use).*

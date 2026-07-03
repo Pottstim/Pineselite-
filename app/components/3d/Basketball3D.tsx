@@ -196,25 +196,73 @@ function Scene({ interactive = true }: SceneProps) {
 }
 
 export default function Basketball3D({ className = "" }: { className?: string }) {
+  const [hasError, setHasError] = React.useState(false);
+  const [isMobile, setIsMobile] = React.useState(false);
+
+  React.useEffect(() => {
+    // Detect mobile / touch device for fallback
+    const checkMobile = () => {
+      const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+      const isSmallScreen = window.innerWidth < 768;
+      setIsMobile(isTouch || isSmallScreen);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // Simple error handling for WebGL issues
+  const handleError = React.useCallback(() => {
+    setHasError(true);
+  }, []);
+
+  // Fallback for mobile or error
+  if (hasError || isMobile) {
+    return (
+      <div className={`w-full h-full flex items-center justify-center bg-[#111114] rounded-3xl ${className}`}>
+        <div className="text-center p-8">
+          <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-[#c8102e] flex items-center justify-center">
+            <span className="text-white text-6xl font-bold tracking-[-3px]">PA</span>
+          </div>
+          <p className="text-white/70 text-sm tracking-widest">3D EXPERIENCE</p>
+          <p className="text-white/50 text-xs mt-1">Best viewed on desktop</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div className={`canvas-container w-full h-full ${className}`}>
+    <div className={`canvas-container w-full h-full relative ${className}`}>
       <Canvas
         camera={{ position: [0, 0, 9], fov: 42 }}
-        style={{ background: 'transparent' }}
+        style={{ 
+          background: 'transparent', 
+          width: '100%', 
+          height: '100%',
+          display: 'block'
+        }}
         gl={{ 
           alpha: true, 
           antialias: true, 
           preserveDrawingBuffer: true,
           powerPreference: "high-performance"
         }}
+        onCreated={(state) => {
+          state.gl.domElement.addEventListener('webglcontextlost', handleError);
+        }}
       >
-        <Suspense fallback={null}>
+        <Suspense fallback={
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="text-white/40 text-sm tracking-widest">LOADING 3D...</div>
+          </div>
+        }>
           <Scene />
         </Suspense>
       </Canvas>
       
       {/* Subtle interaction hint */}
-      <div className="absolute bottom-6 right-6 px-4 py-1.5 rounded-full bg-black/40 backdrop-blur-md border border-white/10 text-xs text-white/60 pointer-events-none">
+      <div className="absolute bottom-6 right-6 px-4 py-1.5 rounded-full bg-black/40 backdrop-blur-md border border-white/10 text-xs text-white/60 pointer-events-none z-10">
         DRAG TO ROTATE • CLICK TO DRIBBLE
       </div>
     </div>

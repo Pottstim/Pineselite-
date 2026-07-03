@@ -7,7 +7,12 @@ import {
   Calendar, Award, MapPin, Mail, Phone 
 } from 'lucide-react';
 import { toast } from 'sonner';
-import Basketball3D from './components/3d/Basketball3D';
+import dynamic from 'next/dynamic';
+
+const Basketball3D = dynamic(() => import('./components/3d/Basketball3D'), { 
+  ssr: false,
+  loading: () => <div className="w-full h-full flex items-center justify-center text-white/50">Loading 3D Experience...</div>
+});
 
 // Navbar Component
 function Navbar() {
@@ -292,7 +297,7 @@ function Athletes() {
   return (
     <section id="athletes" className="section max-w-7xl mx-auto px-6">
       <div className="text-center mb-14">
-        <div className="text-[#c8102e] tracking=[3px] text-xs mb-3">REAL STORIES</div>
+        <div className="text-[#c8102e] tracking-[3px] text-xs mb-3">REAL STORIES</div>
         <h2 className="text-6xl font-bold tracking-[-2px]">Voices from the Pines</h2>
       </div>
 
@@ -545,7 +550,7 @@ function Join() {
   return (
     <section id="join" className="section max-w-5xl mx-auto px-6">
       <div className="text-center mb-12">
-        <div className="text-[#c8102e] tracking-[3px] text-xs mb-3">THE NEXT CHAPTER STARTS HERE</div>
+        <div className="text-[#c8102e] tracking=[3px] text-xs mb-3">THE NEXT CHAPTER STARTS HERE</div>
         <h2 className="text-6xl font-bold tracking-[-2px]">Ready to rise with us?</h2>
         <p className="mt-4 text-xl text-white/70">Whether you're a player ready to level up or a family looking for the right environment — we want to meet you.</p>
       </div>

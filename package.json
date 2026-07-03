@@ -12,18 +12,12 @@
     "next": "16.2.10",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "three": "^0.128.0",
+    "three": "^0.175.0",
     "@react-three/fiber": "^8.17.10",
     "@react-three/drei": "^9.120.4",
-    "@react-three/postprocessing": "^2.16.3",
-    "three-stdlib": "^2.35.2",
     "framer-motion": "^11.15.0",
-    "gsap": "^3.12.5",
-    "lenis": "^1.1.16",
     "lucide-react": "^0.469.0",
-    "sonner": "^1.7.1",
-    "@react-three/rapier": "^1.5.0",
-    "sharp": "^0.33.5"
+    "sonner": "^1.7.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

@@ -56,7 +56,7 @@ function Basketball({ position = [0, 0, 0], scale = 1 }: BasketballProps) {
   return (
     <group ref={groupRef} position={position} scale={scale}>
       {/* Main Basketball Sphere - Click to "dribble" / interact */}
-      <mesh ref={ballRef} onClick={handleClick} onPointerOver={(e) => { e.object.scale.setScalar(1.05); }} onPointerOut={(e) => { if (!isClicked) e.object.scale.setScalar(1); }}>
+      <mesh ref={ballRef} onClick={handleClick}>
         <sphereGeometry args={[ballRadius]} />
         <meshPhongMaterial
           color="#c8102e"

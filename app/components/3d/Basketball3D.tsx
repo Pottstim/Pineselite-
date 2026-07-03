@@ -30,12 +30,14 @@ function Basketball({ position = [0, 0, 0], scale = 1 }: BasketballProps) {
         if (elapsed < 0.6) {
           // Pulse effect on click
           targetScale = breathe + Math.sin(elapsed * 12) * 0.15;
-          ballRef.current.material.emissive = new THREE.Color('#ffaaaa');
-          ballRef.current.material.emissiveIntensity = 0.6;
+          const mat = ballRef.current.material as THREE.MeshPhongMaterial;
+          mat.emissive = new THREE.Color('#ffaaaa');
+          mat.emissiveIntensity = 0.6;
         } else {
           setIsClicked(false);
-          ballRef.current.material.emissive = new THREE.Color('#3a1a00');
-          ballRef.current.material.emissiveIntensity = 0.08;
+          const mat = ballRef.current.material as THREE.MeshPhongMaterial;
+          mat.emissive = new THREE.Color('#3a1a00');
+          mat.emissiveIntensity = 0.08;
         }
       }
 

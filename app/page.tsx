@@ -46,8 +46,8 @@ function Navbar() {
             <span className="text-white font-bold text-xl tracking-[-1.5px]">PA</span>
           </div>
           <div>
-            <div className="font-bold text-xl tracking-[-0.5px]">PINES ATHLETE</div>
-            <div className="text-[10px] text-white/50 -mt-1">SOUTHERN PINES • NC</div>
+            <div className="font-bold text-xl tracking-[-0.5px]">PINES ELITE</div>
+            <div className="text-[10px] text-white/50 -mt-1">AAU BASKETBALL • NC</div>
           </div>
         </div>
 
@@ -133,16 +133,16 @@ function Hero() {
           </div>
 
           <h1 className="display font-bold tracking-[-3.5px] leading-[0.92] mb-6">
-            PINES<br />ATHLETE
+            PINES<br />ELITE
           </h1>
           
           <p className="max-w-[42ch] text-2xl md:text-3xl text-white/90 tracking-[-0.6px] mb-4">
-            Elite AAU Basketball.<br />Character that lasts.
+            Elite AAU Basketball.<br />Excellence and Character.
           </p>
           
           <p className="max-w-md text-lg text-white/60 mb-10">
-            A 501(c)(3) nonprofit developing the next generation of athletes and leaders 
-            in Southern Pines and Moore County through competitive basketball and mentorship.
+            A 501(c)(3) nonprofit AAU basketball organization developing the next generation of elite athletes and leaders 
+            in Southern Pines and Moore County through competitive basketball, skill development, and mentorship.
           </p>
 
           <div className="flex flex-wrap gap-4">
@@ -189,13 +189,13 @@ function Mission() {
   return (
     <section id="about" className="section max-w-5xl mx-auto px-6 text-center">
       <div className="max-w-3xl mx-auto">
-        <div className="uppercase tracking-[3px] text-xs text-[#c8102e] mb-3">OUR WHY</div>
+        <div className="uppercase tracking-[3px] text-xs text-[#c8102e] mb-3">OUR MISSION</div>
         <h2 className="text-6xl md:text-7xl font-bold tracking-[-2.5px] leading-none mb-8">
-          We don\'t just teach<br />the game.<br />We build people.
+          Elite basketball.<br />Exceptional character.<br />Lasting impact.
         </h2>
         <p className="text-xl text-white/70 max-w-[52ch] mx-auto">
-          Pines Athlete exists to give every young person in our community access to elite-level 
-          basketball training, real competition, and the mentorship that turns potential into purpose.
+          Pines Elite exists to provide every young person in our community with access to elite-level 
+          AAU basketball training, competitive opportunities, and mentorship that develops champions on and off the court.
         </p>
       </div>
 
@@ -664,13 +664,13 @@ function Footer() {
         <div className="md:col-span-5">
           <div className="flex items-center gap-3 mb-4">
             <div className="w-8 h-8 rounded-full bg-[#c8102e] flex items-center justify-center">
-              <span className="text-white font-bold">PA</span>
+              <img src="/logo-circular-v2.png" alt="Pines Elite" className="w-8 h-8" />
             </div>
-            <span className="font-bold tracking-[-0.5px] text-xl">PINES ATHLETE</span>
+            <span className="font-bold tracking-[-0.5px] text-xl">PINES ELITE</span>
           </div>
           <p className="max-w-xs text-white/50">
-            A 501(c)(3) nonprofit AAU basketball organization serving Southern Pines, 
-            Pinehurst, Aberdeen and all of Moore County, North Carolina.
+            A 501(c)(3) nonprofit AAU basketball organization dedicated to developing elite athletes and leaders 
+            in Southern Pines, Pinehurst, Aberdeen and all of Moore County, North Carolina.
           </p>
         </div>
 

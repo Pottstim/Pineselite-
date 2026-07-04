@@ -14,23 +14,23 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Pines Athlete | Elite AAU Basketball | Southern Pines, NC",
-  description: "Pines Athlete is a 501(c)(3) nonprofit AAU basketball program in Southern Pines, North Carolina. We develop elite young athletes through competitive play, elite coaching, character development, and community. Join our program or support our mission as a sponsor or donor.",
+  title: "Pines Elite | AAU Basketball | Southern Pines, NC",
+  description: "Pines Elite is a 501(c)(3) nonprofit AAU basketball organization in Southern Pines, North Carolina. We develop elite young athletes through competitive play, elite coaching, character development, and community. Join our program or support our mission as a sponsor or donor.",
   metadataBase: new URL("https://pineselite.llegrandconsulting.workers.dev"),
   icons: { icon: "/favicon.svg" },
-  keywords: ["AAU basketball", "Southern Pines NC", "youth basketball", "nonprofit sports", "Moore County basketball", "elite AAU", "basketball training NC"],
-  authors: [{ name: "Pines Athlete" }],
+  keywords: ["AAU basketball", "Southern Pines NC", "youth basketball", "nonprofit sports", "Moore County basketball", "elite AAU", "Pines Elite", "basketball training NC"],
+  authors: [{ name: "Pines Elite" }],
   openGraph: {
-    title: "Pines Athlete | AAU Basketball in Southern Pines, NC",
+    title: "Pines Elite | AAU Basketball in Southern Pines, NC",
     description: "Developing champions on and off the court. Elite AAU basketball program serving Southern Pines and Moore County youth.",
     images: [{ url: "/og-image.svg" }],
-    siteName: "Pines Athlete",
+    siteName: "Pines Elite",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pines Athlete | Elite AAU Basketball | Southern Pines, NC",
+    title: "Pines Elite | Elite AAU Basketball | Southern Pines, NC",
     description: "Premium AAU basketball program with interactive 3D experience. Join or support our nonprofit mission.",
     images: ["/og-image.svg"],
   },
@@ -40,10 +40,11 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "SportsOrganization",
-    "name": "Pines Athlete",
-    "alternateName": "Pines Athlete AAU Basketball",
+    "name": "Pines Elite",
+    "alternateName": "Pines Elite AAU Basketball",
     "url": "https://pineselite.llegrandconsulting.workers.dev",
     "sport": "Basketball",
+    "areaServed": "Southern Pines, NC",
     "location": {
       "@type": "Place",
       "name": "Southern Pines, NC",
@@ -54,7 +55,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         "postalCode": "28387",
         "addressCountry": "US"
       }
-    }
+    },
+    "image": "/logo-shield-v2.png"
   };
 
   return (

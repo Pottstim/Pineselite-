@@ -43,9 +43,9 @@ function Navbar() {
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-20">
         <div className="flex items-center gap-3">
           <img
-            src="/brand/pines-elite-modern.jpg"
-            alt="Pines Elite AAU Basketball"
-            className="h-11 w-11 rounded-full object-cover border border-white/10"
+            src="/brand/pines-elite-logo.jpg"
+            alt="Pines Elite"
+            className="h-12 w-12 rounded-full object-cover border-2 border-[#c8102e]/50"
           />
           <div>
             <div className="font-bold text-xl tracking-[-0.5px]">PINES ELITE</div>
@@ -666,9 +666,9 @@ function Footer() {
         <div className="md:col-span-5">
           <div className="flex items-center gap-3 mb-4">
             <img
-              src="/brand/pines-elite-modern.jpg"
+              src="/brand/pines-elite-logo.jpg"
               alt="Pines Elite AAU Basketball"
-              className="h-10 w-10 rounded-full object-cover border border-white/10"
+              className="h-10 w-10 rounded-full object-cover border border-[#c8102e]/30"
             />
             <span className="font-bold tracking-[-0.5px] text-xl">PINES ELITE</span>
           </div>

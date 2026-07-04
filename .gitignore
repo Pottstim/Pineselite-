@@ -1,6 +1,8 @@
 node_modules/
 .next/
-out/
-build/
+.out/
+.build/
+.open-next/
+.wrangler/
 .DS_Store
 *.log

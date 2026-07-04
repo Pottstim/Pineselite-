@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Pines Athlete | Elite AAU Basketball | Southern Pines, NC",
   description: "Pines Athlete is a 501(c)(3) nonprofit AAU basketball program in Southern Pines, North Carolina. We develop elite young athletes through competitive play, elite coaching, character development, and community. Join our program or support our mission as a sponsor or donor.",
-  metadataBase: new URL("https://pinesathlete.org"),
+  metadataBase: new URL("https://pineselite.llegrandconsulting.workers.dev"),
   icons: { icon: "/favicon.svg" },
   keywords: ["AAU basketball", "Southern Pines NC", "youth basketball", "nonprofit sports", "Moore County basketball", "elite AAU", "basketball training NC"],
   authors: [{ name: "Pines Athlete" }],
@@ -42,7 +42,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     "@type": "SportsOrganization",
     "name": "Pines Athlete",
     "alternateName": "Pines Athlete AAU Basketball",
-    "url": "https://pinesathlete.org",
+    "url": "https://pineselite.llegrandconsulting.workers.dev",
     "sport": "Basketball",
     "location": {
       "@type": "Place",

@@ -56,7 +56,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         "addressCountry": "US"
       }
     },
-    "image": "/logo-shield-v2.png"
+    "image": "/brand/pines-elite-modern.jpg"
   };
 
   return (

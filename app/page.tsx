@@ -42,9 +42,11 @@ function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 glass border-b border-white/10">
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-20">
         <div className="flex items-center gap-3">
-          <div className="w-9 h-9 rounded-full bg-[#c8102e] flex items-center justify-center">
-            <span className="text-white font-bold text-xl tracking-[-1.5px]">PA</span>
-          </div>
+          <img
+            src="/brand/pines-elite-modern.jpg"
+            alt="Pines Elite AAU Basketball"
+            className="h-11 w-11 rounded-full object-cover border border-white/10"
+          />
           <div>
             <div className="font-bold text-xl tracking-[-0.5px]">PINES ELITE</div>
             <div className="text-[10px] text-white/50 -mt-1">AAU BASKETBALL • NC</div>
@@ -194,8 +196,8 @@ function Mission() {
           Elite basketball.<br />Exceptional character.<br />Lasting impact.
         </h2>
         <p className="text-xl text-white/70 max-w-[52ch] mx-auto">
-          Pines Elite exists to provide every young person in our community with access to elite-level 
-          AAU basketball training, competitive opportunities, and mentorship that develops champions on and off the court.
+          Pines Elite exists to give every young person in our community access to elite-level 
+          basketball training, real competition, and the mentorship that turns potential into purpose.
         </p>
       </div>
 
@@ -278,7 +280,7 @@ function Program() {
 function Athletes() {
   const testimonials = [
     {
-      quote: "Pines Athlete completely changed how I see the game. The coaching is elite but they actually care about who you are as a person. I'm now playing at a D2 school with a scholarship.",
+      quote: "Pines Elite completely changed how I see the game. The coaching is elite but they actually care about who you are as a person. I'm now playing at a D2 school with a scholarship.",
       name: "Jalen R.",
       role: "17U Alum • UNC Pembroke"
     },
@@ -498,7 +500,7 @@ function Support() {
             </button>
 
             <p className="text-center text-xs text-white/40">
-              Pines Athlete is a registered 501(c)(3) nonprofit. All donations are tax-deductible to the extent allowed by law.
+              Pines Elite is a registered 501(c)(3) nonprofit. All donations are tax-deductible to the extent allowed by law.
             </p>
           </form>
         </div>
@@ -521,7 +523,7 @@ function Support() {
           
           <div className="pt-4 text-xs text-white/40 px-1">
             Corporate sponsorships and player sponsorship opportunities also available. 
-            <button onClick={() => toast.info("Contact us at sponsors@pinesathlete.org for partnership details")} className="underline hover:text-white/70 ml-1">Learn more →</button>
+            <button onClick={() => toast.info("Contact us at sponsors@pineselite.org for partnership details")} className="underline hover:text-white/70 ml-1">Learn more →</button>
           </div>
         </div>
       </div>
@@ -663,9 +665,11 @@ function Footer() {
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-12 gap-y-12">
         <div className="md:col-span-5">
           <div className="flex items-center gap-3 mb-4">
-            <div className="w-8 h-8 rounded-full bg-[#c8102e] flex items-center justify-center">
-              <img src="/logo-circular-v2.png" alt="Pines Elite" className="w-8 h-8" />
-            </div>
+            <img
+              src="/brand/pines-elite-modern.jpg"
+              alt="Pines Elite AAU Basketball"
+              className="h-10 w-10 rounded-full object-cover border border-white/10"
+            />
             <span className="font-bold tracking-[-0.5px] text-xl">PINES ELITE</span>
           </div>
           <p className="max-w-xs text-white/50">
@@ -678,7 +682,7 @@ function Footer() {
           <div className="font-medium mb-4 tracking-widest text-xs text-white/50">CONTACT</div>
           <div className="space-y-2 text-white/80">
             <div className="flex items-center gap-2"><MapPin size={15} /> Southern Pines, NC 28387</div>
-            <div className="flex items-center gap-2"><Mail size={15} /> info@pinesathlete.org</div>
+            <div className="flex items-center gap-2"><Mail size={15} /> info@pineselite.org</div>
             <div className="flex items-center gap-2"><Phone size={15} /> (910) 555-0187</div>
           </div>
         </div>
@@ -697,7 +701,7 @@ function Footer() {
       </div>
 
       <div className="mt-16 pt-8 border-t border-white/10 text-center text-xs text-white/40 max-w-7xl mx-auto px-6">
-        © {new Date().getFullYear()} Pines Athlete. All rights reserved. A registered 501(c)(3) nonprofit organization. 
+        © {new Date().getFullYear()} Pines Elite. All rights reserved. A registered 501(c)(3) nonprofit organization. 
         EIN available upon request. Built with pride in Southern Pines, North Carolina.
       </div>
     </footer>
@@ -705,7 +709,7 @@ function Footer() {
 }
 
 // Main Page
-export default function PinesAthleteSite() {
+export default function PinesEliteSite() {
   return (
     <div className="bg-[#0a0a0f] text-white overflow-x-hidden">
       <Navbar />

@@ -222,9 +222,11 @@ export default function Basketball3D({ className = "" }: { className?: string })
     return (
       <div className={`w-full h-full flex items-center justify-center bg-[#111114] rounded-3xl ${className}`}>
         <div className="text-center p-8">
-          <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-[#c8102e] flex items-center justify-center">
-            <span className="text-white text-6xl font-bold tracking-[-3px]">PA</span>
-          </div>
+          <img
+            src="/brand/pines-elite-modern.jpg"
+            alt="Pines Elite AAU Basketball"
+            className="w-40 h-40 mx-auto mb-6 rounded-full object-cover border-2 border-[#c8102e]/40 shadow-2xl"
+          />
           <p className="text-white/70 text-sm tracking-widest">3D EXPERIENCE</p>
           <p className="text-white/50 text-xs mt-1">Best viewed on desktop</p>
         </div>

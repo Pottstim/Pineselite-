@@ -1,8 +1,8 @@
-# 🏀 Pines Athlete
+# 🏀 Pines Elite
 
 **Premium 3D AAU Basketball Website** | Southern Pines, North Carolina
 
-A high-end, interactive nonprofit website for **Pines Athlete** — an elite AAU basketball program developing young athletes with world-class training, character, and college pathways.
+A high-end, interactive nonprofit website for **Pines Elite** — an elite AAU basketball program developing young athletes with world-class training, character, and college pathways.
 
 **Red & Black** athletic aesthetic with a fully interactive 3D basketball experience powered by Three.js.
 
@@ -81,10 +81,10 @@ Pull requests welcome! Especially for:
 
 - **Live Site** (after deploy): Coming soon
 - **GitHub**: https://github.com/Pottstim/Pineselite-
-- **Program**: Pines Athlete — Southern Pines, NC
+- **Program**: Pines Elite — Southern Pines, NC
 
 ---
 
 **Built with pride for Southern Pines basketball.**
 
-*This is a 501(c)(3) nonprofit project. Donations via the site are tax-deductible (connect real processor for live use).*
+*This is a 501(c)(3) nonprofit project. Donations via the site are tax-deductible (connect real processor for live use).
